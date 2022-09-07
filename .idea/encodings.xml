@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/B_ProjectParent/C_ProjectBuilds/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/B_ProjectParent/C_ProjectBuilds/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/B_ProjectParent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/B_ProjectParent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/C_ProjectBuild/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/C_ProjectBuild/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D01_CommonTool/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D01_CommonTool/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D01_CommonTools/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D01_CommonTools/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D02_CommonCore/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D02_CommonCore/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D03_CommonRdb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/D03_CommonRdb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/D_ProjectCommon/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/E_RegistryCenter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/E_RegistryCenter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Project_SpringBootDemo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Project_SpringBootDemo/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
