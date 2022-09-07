@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88913bf6-0240-44bd-b2a4-cf9bac263eb1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="88913bf6-0240-44bd-b2a4-cf9bac263eb1" name="Changes" comment="提交readme文档">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,8 +79,16 @@
       <workItem from="1661575377948" duration="1718000" />
       <workItem from="1661578338944" duration="7927000" />
       <workItem from="1662427540910" duration="7915000" />
-      <workItem from="1662517849727" duration="1685000" />
+      <workItem from="1662517849727" duration="5755000" />
     </task>
+    <task id="LOCAL-00001" summary="提交readme文档">
+      <created>1662520195895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662520195895</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="提交readme文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交readme文档" />
   </component>
 </project>
