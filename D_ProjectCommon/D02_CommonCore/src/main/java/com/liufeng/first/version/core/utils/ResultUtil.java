@@ -1,6 +1,7 @@
 package com.liufeng.first.version.core.utils;
 
 import com.liufeng.first.version.core.constants.StringConstant;
+import com.liufeng.first.version.core.enums.ResultCodeEnum;
 import com.liufeng.first.version.core.exceptions.ErrorType;
 import com.liufeng.first.version.core.exceptions.SystemErrorType;
 import io.swagger.annotations.ApiModelProperty;
@@ -46,14 +47,30 @@ public final class ResultUtil<T> implements Serializable {
         this.data = data;
     }
 
+    /**
+     * @return
+     */
     public static ResultUtil success() {
         return success(null);
     }
 
+    /**
+     * 默认返回成功信息
+     *
+     * @param data 数据对象
+     * @return 返回成功的结果信息
+     */
     public static ResultUtil success(Object data) {
-        return new ResultUtil<>(SUCCESSFUL_CODE, SUCCESSFUL_MESSAGE, data);
+        return new ResultUtil<>(ResultCodeEnum.SUCCESS.getCode(), ResultCodeEnum.SUCCESS.getDesc(), data);
     }
 
+    /**
+     * 返回指定的状态码，数据对象
+     *
+     * @param data 数据对象
+     * @param successCode 指定的
+     * @return
+     */
     public static ResultUtil success(Object data, int successCode) {
         return new ResultUtil<>(successCode, SUCCESSFUL_MESSAGE, data);
     }
@@ -62,8 +79,14 @@ public final class ResultUtil<T> implements Serializable {
         return success(SystemErrorType.SYSTEM_ERROR);
     }
 
+    /**
+     * 默认返回失败信息
+     *
+     * @param data 数据对象
+     * @return 返回失败的结果信息
+     */
     public static ResultUtil failure(Object data) {
-        return new ResultUtil<>(SUCCESSFUL_CODE, SUCCESSFUL_MESSAGE, data);
+        return new ResultUtil<>(ResultCodeEnum.FAILURE.getCode(), ResultCodeEnum.FAILURE.getDesc(), data);
     }
 
     public static ResultUtil failure(Object data, int successCode) {
