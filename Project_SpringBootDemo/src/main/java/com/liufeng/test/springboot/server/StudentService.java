@@ -16,6 +16,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
 
+    /**
+     * 新增学生信息
+     * @param saveDto 学生信息参数
+     * @return true 新增成功；false 新增失败
+     */
     public boolean addStudent(SaveStudentDTO saveDto) {
         return true;
     }

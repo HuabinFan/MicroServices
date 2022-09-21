@@ -30,7 +30,7 @@ public class StudentController {
     @ApiOperation(value = "新增学生信息", notes = "新增一条高校学生信息")
     @PostMapping("/add")
     public ResultUtil addStudent(@Valid @RequestBody SaveStudentDTO saveDto) throws ApiException {
-        return studentService.addStudent(saveDto) ? ResultUtil.success() : ResultUtil.failure();
+        return studentService.addStudent(saveDto) ? ResultUtil.success(saveDto) : ResultUtil.failure();
     }
 
     @ApiOperation(value = "删除学生信息")

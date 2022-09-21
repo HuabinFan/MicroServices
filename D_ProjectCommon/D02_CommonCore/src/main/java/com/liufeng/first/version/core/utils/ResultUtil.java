@@ -2,8 +2,10 @@ package com.liufeng.first.version.core.utils;
 
 import com.liufeng.first.version.core.constants.StringConstant;
 import com.liufeng.first.version.core.enums.ResultCodeEnum;
+import com.liufeng.first.version.core.exceptions.BaseException;
 import com.liufeng.first.version.core.exceptions.ErrorType;
 import com.liufeng.first.version.core.exceptions.SystemErrorType;
+import com.liufeng.first.version.core.vo.ResultStatusVO;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
@@ -14,16 +16,7 @@ import java.io.Serializable;
  * @WeChatAccount: Java技术与生活
  * @description: 返回数据结果
  */
-public final class ResultUtil<T> implements Serializable {
-
-    public static final int SUCCESSFUL_CODE = 1;
-    public static final String SUCCESSFUL_MESSAGE = "success";
-
-    @ApiModelProperty(value = "状态码")
-    private int code;
-
-    @ApiModelProperty(value = "提示信息")
-    private String message;
+public final class ResultUtil<T> extends ResultStatusVO implements Serializable {
 
     @ApiModelProperty(value = "返回数据")
     private T data;
@@ -48,61 +41,95 @@ public final class ResultUtil<T> implements Serializable {
     }
 
     /**
-     * @return
+     * @param <T> 类型对象
+     * @return 结果成功时，内容数据为空
      */
-    public static ResultUtil success() {
+    public static <T> ResultUtil<T> success() {
         return success(null);
     }
 
     /**
-     * 默认返回成功信息
+     * 返回默认的成功信息
      *
      * @param data 数据对象
-     * @return 返回成功的结果信息
+     * @return 返回成功结果信息
      */
-    public static ResultUtil success(Object data) {
+    public static <T> ResultUtil<T> success(T data) {
         return new ResultUtil<>(ResultCodeEnum.SUCCESS.getCode(), ResultCodeEnum.SUCCESS.getDesc(), data);
     }
 
     /**
-     * 返回指定的状态码，数据对象
+     * 返回指定的状态码，成功提示信息，数据对象
      *
-     * @param data 数据对象
-     * @param successCode 指定的
-     * @return
+     * @param successCode 指定的成功状态码
+     * @param data        数据对象
+     * @return 成功结果
      */
-    public static ResultUtil success(Object data, int successCode) {
-        return new ResultUtil<>(successCode, SUCCESSFUL_MESSAGE, data);
+    public static <T> ResultUtil<T> success(int successCode, T data) {
+        return new ResultUtil<>(successCode, ResultCodeEnum.SUCCESS.getDesc(), data);
     }
 
-    public static ResultUtil failure() {
-        return success(SystemErrorType.SYSTEM_ERROR);
+    /**
+     * 返回成功状态码，指定的成功提示信息，数据对象
+     *
+     * @param successMsg 指定的成功提示信息
+     * @param data       数据对象
+     * @return 成功结果
+     */
+    public static <T> ResultUtil<T> success(String successMsg, T data) {
+        return new ResultUtil<>(ResultCodeEnum.SUCCESS.getCode(), successMsg, data);
+    }
+
+    public static <T> ResultUtil<T> failure() {
+        return new ResultUtil<>(SystemErrorType.SYSTEM_ERROR);
+    }
+
+    public static <T> ResultUtil<T> failure(BaseException baseException, T data) {
+        return new ResultUtil<>(baseException.getErrorType(), data);
+    }
+
+    public static <T> ResultUtil<T> failure(ErrorType errorType, T data) {
+        return new ResultUtil<>(errorType, data);
+    }
+
+    public static <T> ResultUtil<T> failure(ErrorType errorType) {
+        return new ResultUtil<>(errorType);
     }
 
     /**
      * 默认返回失败信息
      *
-     * @param data 数据对象
-     * @return 返回失败的结果信息
+     * @param data 失败数据对象
+     * @return 失败的结果
      */
-    public static ResultUtil failure(Object data) {
-        return new ResultUtil<>(ResultCodeEnum.FAILURE.getCode(), ResultCodeEnum.FAILURE.getDesc(), data);
+    public static <T> ResultUtil<T> failure(T data) {
+        return new ResultUtil<>(ResultCodeEnum.FAILURE.getCode(), ResultCodeEnum.FAILURE.getDesc(), null);
     }
 
-    public static ResultUtil failure(Object data, int successCode) {
-        return new ResultUtil<>(successCode, SUCCESSFUL_MESSAGE, data);
+    /**
+     * 返回指定的状态码，失败提示信息，数据对象
+     *
+     * @param failureCode 指定的失败状态码
+     * @param data        数据对象
+     * @return 失败结果
+     */
+    public static <T> ResultUtil<T> failure(int failureCode, T data) {
+        return new ResultUtil<>(failureCode, ResultCodeEnum.FAILURE.getDesc(), data);
     }
 
-    public int getCode() {
-        return this.code;
-    }
-
-    public String getMessage() {
-        return this.message;
+    /**
+     * 返回失败状态码，指定的失败提示信息，数据对象
+     *
+     * @param failureMsg 指定的失败提示信息
+     * @param data       数据对象
+     * @return 失败结果
+     */
+    public static <T> ResultUtil<T> failure(String failureMsg, T data) {
+        return new ResultUtil<>(ResultCodeEnum.FAILURE.getCode(), failureMsg, data);
     }
 
     public T getData() {
-        return this.data;
+        return data;
     }
 
 }

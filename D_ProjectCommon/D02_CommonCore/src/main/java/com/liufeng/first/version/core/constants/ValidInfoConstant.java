@@ -146,7 +146,7 @@ public interface ValidInfoConstant {
     /**
      * 学号长度检验 提示信息
      */
-    String WORK_NO_LENGTH_MESSAGE = "学号最大长度为" + STUDENT_NO_LENGTH + "个字符";
+    String STUDENT_NO_LENGTH_MESSAGE = "学号最大长度为" + STUDENT_NO_LENGTH + "个字符";
 
     /**
      * 学号校验规则
@@ -187,6 +187,16 @@ public interface ValidInfoConstant {
      * 身份证校验 提示信息
      */
     String ID_CARD_REGEXP_MESSAGE = "身份证格式不正确!";
+
+    /**
+     * 身份证号长度
+     */
+    int ID_CARD_LENGTH = 18;
+
+    /**
+     * 身份证号长度 提示信息
+     */
+    String ID_CARD_LENGTH_MESSAGE = "身份证号最大长度为" + ID_CARD_LENGTH + "位";
 
     /**
      * 手机号长度
