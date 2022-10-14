@@ -61,7 +61,7 @@ public class SaveStudentDTO implements Serializable {
     @Pattern(regexp = ValidInfoConstant.WECHAT_REGEXP, message = ValidInfoConstant.WECHAT_REGEXP_MESSAGE)
     private String wechat;
 
-    @ApiModelProperty(value = "移动电话", example = "移动电Cre话")
+    @ApiModelProperty(value = "移动电话", example = "移动电话")
     @Length(max = ValidInfoConstant.PHONE_LENGTH, message = ValidInfoConstant.PHONE_LENGTH_MESSAGE)
     @Pattern(regexp = ValidInfoConstant.PHONE_REGEXP, message = ValidInfoConstant.PHONE_REGEXP_MESSAGE)
     private String phone;
