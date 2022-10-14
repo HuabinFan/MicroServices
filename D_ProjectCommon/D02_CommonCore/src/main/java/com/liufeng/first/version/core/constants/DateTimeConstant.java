@@ -48,4 +48,9 @@ public interface DateTimeConstant {
      */
     String PATTERN_YYYYMMDDHHMISSSSS = "yyyyMMddHHmmssSSS";
 
+    /**
+     * 默认日期时间格式：年-月-日 时:分:秒.毫秒，如：2021-01-01 23:59:59.001
+     */
+    String DEFAULT_DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss.SSS";
+
 }
