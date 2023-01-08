@@ -33,7 +33,7 @@ public class BaseEntity implements Serializable {
 
     @IgnoreRegisterField
     @ApiModelProperty(value = "修改人")
-    private Date updateBy;
+    private String updateBy;
 
     @IgnoreRegisterField
     @ApiModelProperty(value = "修改时间")
