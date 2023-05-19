@@ -10,6 +10,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -277,6 +279,60 @@ public class DateTimeUtil implements Serializable {
         calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) + futureDay);
         LocalDate localDate = dateToLocalDate(calendar.getTime(), zoneId);
         return localDateToDate(localDate, zoneId);
+    }
+
+    /**
+     * 获取某年某月有多少天，输入格式只能是 yyyy-MM-dd 或 yyyy-MM
+     *
+     * @param strDate 字符串类型的日期
+     * @return 某年某月天数
+     */
+    public static Integer getDaysOfMonth(String strDate) {
+        if (strDate.length() == 7) {
+            strDate += DateTimeConstant.MONTH_START_SUFFIX;
+        }
+        int year = Integer.parseInt(strDate.substring(0, 4));
+        int month = Integer.parseInt(strDate.substring(5, 7));
+        return LocalDate.of(year, month, 1).lengthOfMonth();
+    }
+
+    /**
+     * 根据开始结束日期获取年差值
+     *
+     * @param startDate 开始日期[yyyy-MM-dd]
+     * @param endDate   结束日期[yyyy-MM-dd]
+     * @return 两个日期之间的年差值
+     */
+    public long getYearDiff(String startDate, String endDate) {
+        Temporal startTemp = LocalDate.parse(startDate);
+        Temporal endTemp = LocalDate.parse(endDate);
+        return ChronoUnit.YEARS.between(startTemp, endTemp);
+    }
+
+    /**
+     * 根据开始结束日期获取月差值
+     *
+     * @param startDate 开始日期[yyyy-MM-dd]
+     * @param endDate   结束日期[yyyy-MM-dd]
+     * @return 两个日期之间的月差值
+     */
+    public long getMonthDiff(String startDate, String endDate) {
+        Temporal startTemp = LocalDate.parse(startDate);
+        Temporal endTemp = LocalDate.parse(endDate);
+        return ChronoUnit.MONTHS.between(startTemp, endTemp);
+    }
+
+    /**
+     * 根据开始结束日期获取日差值
+     *
+     * @param startDate 开始日期[yyyy-MM-dd]
+     * @param endDate   结束日期[yyyy-MM-dd]
+     * @return 两个日期之间的日差值
+     */
+    public long getDayDiff(String startDate, String endDate) {
+        Temporal startTemp = LocalDate.parse(startDate);
+        Temporal endTemp = LocalDate.parse(endDate);
+        return ChronoUnit.DAYS.between(startTemp, endTemp);
     }
 
 }
