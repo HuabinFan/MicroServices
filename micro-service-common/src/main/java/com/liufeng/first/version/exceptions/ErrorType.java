@@ -1,7 +1,7 @@
 package com.liufeng.first.version.exceptions;
 
-import com.liufeng.first.version.core.toolkits.LocaleMessage;
-import com.liufeng.first.version.core.utils.SpringContextUtil;
+import com.liufeng.first.version.util.LocaleMessage;
+import com.liufeng.first.version.util.SpringContextUtil;
 import com.microsoft.sqlserver.jdbc.StringUtils;
 
 import java.io.Serializable;
@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public interface ErrorType extends Serializable {
 
-    LocaleMessage localeMessage = (LocaleMessage) SpringContextUtil.getBean("localeMessage");
+    LocaleMessage LOCALE_MESSAGE = (LocaleMessage) SpringContextUtil.getBean("localeMessage");
 
     /**
      * 返回 code

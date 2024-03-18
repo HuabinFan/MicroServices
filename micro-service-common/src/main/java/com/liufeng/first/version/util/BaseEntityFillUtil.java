@@ -1,6 +1,7 @@
 package com.liufeng.first.version.util;
 
-import com.liufeng.first.version.core.entitys.BaseEntity;
+
+import com.liufeng.first.version.entitys.BaseEntity;
 
 import java.util.Date;
 

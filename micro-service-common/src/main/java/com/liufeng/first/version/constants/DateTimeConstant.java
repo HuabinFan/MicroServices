@@ -53,4 +53,5 @@ public interface DateTimeConstant {
      */
     String DEFAULT_DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss.SSS";
 
+    String MONTH_START_SUFFIX = "";
 }

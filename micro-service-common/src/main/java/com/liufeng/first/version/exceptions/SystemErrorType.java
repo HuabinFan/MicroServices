@@ -34,11 +34,11 @@ public enum SystemErrorType implements ErrorType {
 
     @Override
     public String getMessage() {
-        return localeMessage.getMessage(message);
+        return LOCALE_MESSAGE.getMessage(message);
     }
 
     @Override
     public String getMessage(Object[] objects) {
-        return localeMessage.getMessage(message, objects);
+        return LOCALE_MESSAGE.getMessage(message, objects);
     }
 }
